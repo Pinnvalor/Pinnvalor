@@ -1931,6 +1931,24 @@ section,
   }
 }
 
+
+
+<section class="newsletter-posts">
+  <article>
+    <div class="post-img">
+      <img src="your-image.jpg" alt="">
+      <div class="post-date">Apr 2025</div>
+    </div>
+    <div class="post-content">
+      <h2 class="post-title">April Edition: Unlocking CFS Simplification</h2>
+      <p>Insights on IND AS 110, real-life case studies, and practical frameworks.</p>
+      <a href="newsletter-details.html" class="readmore">Read More <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </article>
+</section>
+
+
+
 /*--------------------------------------------------------------
 # Blog Posts Section
 --------------------------------------------------------------*/
