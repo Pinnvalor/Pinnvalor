@@ -1931,6 +1931,144 @@ section,
   }
 }
 
+
+
+/*--------------------------------------------------------------
+# Responsive Newsletter Section
+--------------------------------------------------------------*/
+.newsletter-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.newsletter-posts article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Image Section */
+.newsletter-posts .post-img {
+  flex: 1 1 250px;
+  min-width: 250px;
+  max-width: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.newsletter-posts .post-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+  object-fit: cover;
+}
+
+.newsletter-posts article:hover .post-img img {
+  transform: scale(1.05);
+}
+
+.newsletter-posts .post-date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top-right-radius: 6px;
+}
+
+/* Content Section */
+.newsletter-posts .post-content {
+  flex: 1 1 300px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.newsletter-posts .post-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.newsletter-posts .post-title:hover {
+  color: var(--accent-color);
+}
+
+.newsletter-posts p {
+  font-size: 15px;
+  color: var(--default-color);
+  margin-bottom: 15px;
+}
+
+.newsletter-posts .readmore {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--heading-color), transparent 20%);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.newsletter-posts .readmore:hover {
+  color: var(--accent-color);
+}
+
+.newsletter-posts .readmore i {
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------
+# Responsive Fix for Mobile
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .newsletter-posts article {
+    flex-direction: column;
+  }
+
+  .newsletter-posts .post-img,
+  .newsletter-posts .post-content {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .newsletter-posts .post-content {
+    padding: 15px 20px;
+  }
+
+  .newsletter-posts .post-title {
+    font-size: 18px;
+  }
+
+  .newsletter-posts p {
+    font-size: 14px;
+  }
+
+  .newsletter-posts .post-date {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+
+
+
+
 /*--------------------------------------------------------------
 # Blog Posts Section
 --------------------------------------------------------------*/
