@@ -154,36 +154,35 @@ We value your time and will respond promptly to help your business scale efficie
 					<p><a href="mailto:info@yourdomainname.com" class="btn btn-primary btn-outline">Contact Us</a></p>
 				</div>
 			</div>
-			
-			<div class="row">
-				<div class="col-md-6 col-md-push-6 col-sm-6 col-sm-push-6">
-					<form action="#" id="form-wrap">
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="name">Your Name</label>
-								<input type="text" class="form-control" id="name">
-							</div>
-						</div>
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="email">Your Email</label>
-								<input type="text" class="form-control" id="email">
-							</div>
-						</div>
-						<div class="row form-group">
-							<div class="col-md-12">
-								<label for="message">Your Message</label>
-								<textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-							</div>
-						</div>
-						<div class="row form-group">
-							<div class="col-md-12">
-								<input type="submit" class="btn btn-primary btn-outline btn-lg" value="Submit Form">
-							</div>
-						</div>
+			<form action="#" id="form-wrap">
+	<div class="row form-group">
+		<div class="col-md-12">
+			<label for="name">Your Name</label>
+			<input type="text" class="form-control" id="name" name="name" required>
+		</div>
+	</div>
 
-					</form>
-				</div>
+	<div class="row form-group">
+		<div class="col-md-12">
+			<label for="email">Your Email</label>
+			<input type="email" class="form-control" id="email" name="email" required>
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-md-12">
+			<label for="message">Your Message</label>
+			<textarea id="message" name="message" cols="30" rows="10" class="form-control" required></textarea>
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-md-12">
+			<input type="submit" class="btn btn-primary btn-outline btn-lg" value="Submit Form">
+		</div>
+	</div>
+</form>
+</div>
 			</div>
 
 		</div>
@@ -288,6 +287,36 @@ Our professionals combine industry expertise with structured processes to delive
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
+
+
+<script>
+document.getElementById("form-wrap").addEventListener("submit", function(e) {
+	e.preventDefault();
+
+	const data = {
+		name: document.getElementById("name").value,
+		email: document.getElementById("email").value,
+		message: document.getElementById("message").value
+	};
+
+	fetch("https://script.google.com/macros/s/AKfycbxCLHRWOZH0tUKcwnz2qVIWLwifF5TbLkv3HGpRuAloAx_JZO1AElrArjDPYPHr9V4a/exec", {
+	method: "POST",
+	headers: {
+		"Content-Type": "application/json"
+	},
+	body: JSON.stringify(data)
+})
+	.then(response => response.text())
+	.then(result => {
+		alert("Form submitted successfully!");
+		document.getElementById("form-wrap").reset();
+	})
+	.catch(error => {
+		alert("Error submitting form");
+	});
+});
+</script>
 
 	</body>
 </html>
