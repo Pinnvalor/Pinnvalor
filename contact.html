@@ -301,17 +301,20 @@ document.getElementById("form-wrap").addEventListener("submit", function(e) {
 	};
 
 	fetch("https://script.google.com/macros/s/AKfycbxCLHRWOZH0tUKcwnz2qVIWLwifF5TbLkv3HGpRuAloAx_JZO1AElrArjDPYPHr9V4a/exec", {
-		method: "POST",
-		mode: "no-cors",
-		body: JSON.stringify(data)
-	})
-	.then(() => {
-		alert("Form submitted successfully!");
-		document.getElementById("form-wrap").reset();
-	})
-	.catch(() => {
-		alert("Error submitting form");
-	});
+  method: "POST",
+  mode: "no-cors",   // REQUIRED
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+.then(() => {
+  alert("Form submitted successfully!");
+  document.getElementById("form-wrap").reset();
+})
+.catch(() => {
+  alert("Error submitting form");
+});
 });
 </script>
 
